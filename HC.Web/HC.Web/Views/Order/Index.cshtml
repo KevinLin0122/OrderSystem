@@ -1,0 +1,37 @@
+﻿@model List<HC.Core.Models.Product>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>產品名稱</th>
+            <th>價錢</th> 
+            <th>
+                <a type="button" class="btn btn-warning" href="/Order/Create">新增</a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.產品名稱</td>
+                <td>@item.價錢</td>
+                <td>
+                    @Html.ActionLink("編輯", "Edit", new { id = item.id }, new { @class = "btn btn-info" })
+                    @Html.ActionLink("刪除", "Delete", new { id = item.id }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </tbody>
+
+
+
+</table>
+
