@@ -10,4 +10,5 @@ namespace HC.Core.Models
         public string 產品名稱 { get; set; }
         public int 價錢 { get; set; }
     }
+    //0319
 }
